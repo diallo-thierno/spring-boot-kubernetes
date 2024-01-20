@@ -1,0 +1,12 @@
+apiVersion: skaffold/v4beta9
+kind: Config
+metadata:
+  name: spring-boot-kubernetes
+build:
+  artifacts:
+    - image: tnaddhal/spring-boot-kubernetes
+      jib:
+        project: io.cerdes:spring-boot-kubernetes
+manifests:
+  rawYaml:
+    - target/classes/META-INF/dekorate/kubernetes.yml
