@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@KubernetesApplication(ingress = @Ingress(expose = true), serviceType = ServiceType.NodePort)
+@KubernetesApplication(ingress = @Ingress(expose = true, host = "spring-boot-kubernetes.io"), serviceType = ServiceType.NodePort)
 @JibBuild(from = "openjdk:21-jdk-slim", group = "docker.io/tnaddhal", dockerBuild = false)
 public class SpringBootKubernetesApplication {
     public static void main(String[] args) {
